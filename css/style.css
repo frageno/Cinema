@@ -152,4 +152,34 @@ img {
 button {
   border: none !important;
 }
+
+.about-us {
+  background: #1b262c;
+  height: 250vh;
+}
+
+.icon {
+  color: #3282b8;
+}
+
+.btn-read {
+  width: 150px;
+  padding: 5px;
+  background: #3282b8;
+  color: #fff;
+  -webkit-box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.btn-read:hover {
+  color: #000;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+}
+
+#more, #more2, #more3 {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
