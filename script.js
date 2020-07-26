@@ -1,36 +1,23 @@
 // Getting elemnts from DOM
 
-let dots = document.getElementById('dots');
-let myBtn = document.getElementById('myBtn');
-let myBtn2 = document.getElementById('myBtn2');
-let myBtn3 = document.getElementById('myBtn3');
-let more = document.getElementById('more');
-let navButton = document.getElementById('nav-button');
-let movie = document.getElementById('movie');
-let img = document.getElementById('img');
-let about = document.getElementById('about-us');
-let screenContainer = document.querySelector('.screen-container');
-const seats = document.querySelectorAll('.seat .row:not(.occupied)');
+const dots = document.getElementById('dots');
+const myBtn = document.getElementById('myBtn');
+const more = document.getElementById('more');
+const navButton = document.getElementById('nav-button');
+const about = document.getElementById('about-us');
+const screenContainer = document.querySelector('.screen-container');
+const openModalButtons = document.querySelectorAll('[data-modal-target]');
+const closeModalButtons = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
+const overlay2 = document.getElementById('overlay2');
+const booking = document.querySelectorAll('.booking');
+const count = document.getElementById('count');
 
-screenContainer.addEventListener('click', (e)=> {
-        if(e.target.classList.contains('seat')){
-                e.target.classList.toggle('selected');
-                
-        };
-});
 
-changeImage = (e) => {
-        
-        if(e.target.value === '12'){
-                        
-                        img.innerHTML = '<img src="img/guard.jpg" alt="guard" width="204" height="295">';
-                        
-        }else {
-                img.innerHTML = '<img src="img/avangers.jpg" alt="avangers">';
-                
-        }
-}
-movie.addEventListener('change',changeImage);
+
+
+
+
 // Adding class to button on small screen
 
 addClassChange = () => {
@@ -48,7 +35,7 @@ showMore = () => {
                 dots.style.display = 'inline';
                 myBtn.innerText = "Read more";
                 more.style.display = "none";
-               
+                
 
         }else {
 
@@ -56,67 +43,102 @@ showMore = () => {
                 myBtn.innerText = "Read less";
                 more.style.display = "inline";
                 
+                
         }
 
 
 }
-showMore2 = () => {
-
-        if(dots2.style.display === 'none'){
-                dots2.style.display = 'inline';
-                myBtn2.innerText = "Read more";
-                more2.style.display = "none";
-                
-                
-
-        }else {
-               
-                dots2.style.display = 'none';
-                myBtn2.innerText = "Read less";
-                more2.style.display = "inline";
-                
-                
-
-        }
-
-}
-showMore3 = () => {
-                   
-
-        if(dots3.style.display === 'none'){
-                
-                dots3.style.display = 'inline';
-                myBtn3.innerText = "Read more";
-                more3.style.display = "none";
-                
- 
-
-        }else {
-                
-                dots3.style.display = 'none';
-                myBtn3.innerText = "Read less";
-                more3.style.display = "inline";
-                
 
 
-        }
+// Events for modal FAQ
+
+openModalButtons.forEach(button => {
+        button.addEventListener('click', () =>{
+                const modal = document.querySelector(button.dataset.modalTarget);
+                openModal(modal);
+        })
+});
+closeModalButtons.forEach(button => {
+        button.addEventListener('click', () =>{
+                const modal = button.closest('.modal1');                           
+                closeModal(modal);
+        })
+});
+overlay.addEventListener('click', () => {
+        const modals = document.querySelectorAll('.modal1.active');
+        modals.forEach(modal => {
+                closeModal(modal);
+        });
         
+});
+function openModal(modal){
+        if(modal === null) return
+        modal.classList.add('active');
+        overlay.classList.add('active');
 
+}
+function closeModal(modal){
+        if(modal === null) return
+        modal.classList.remove('active');
+        overlay.classList.remove('active');
+}
+openModalButtons.forEach(button => {
+        button.addEventListener('click', () =>{
+                const modal = document.querySelector(button.dataset.modalTarget);
+                openModal(modal);
+        })
+});
+closeModalButtons.forEach(button => {
+        button.addEventListener('click', () =>{
+                const modal = button.closest('.modal2');                           
+                closeModal(modal);
+        })
+});
+overlay2.addEventListener('click', () => {
+        const modals = document.querySelectorAll('.modal2.active');
+        modals.forEach(modal => {
+                closeModal(modal);
+        });
+        
+});
+function openModal(modal){
+        if(modal === null) return
+        modal.classList.add('active');
+        overlay2.classList.add('active');
+
+}
+function closeModal(modal){
+        if(modal === null) return
+        modal.classList.remove('active');
+        overlay2.classList.remove('active');
 }
 
 
 
 
 
+
+
+
+
+function updateCount () {
+        const selectedSeats = document.querySelectorAll('.row .seat.selected');
+        const selectedSeatsCount = selectedSeats.length;
+        count.innerHTML = selectedSeatsCount;
+}
 
 
 
 // Events Listeners
 
 navButton.addEventListener('click', addClassChange);  // change class on hamburger menu
-myBtn.addEventListener('click',showMore);
-myBtn2.addEventListener('click',showMore2);
-myBtn3.addEventListener('click',showMore3);
+myBtn.addEventListener('click',showMore); // show more content
+screenContainer.addEventListener('click', (e)=> {
+        if(e.target.classList.contains('seat')){
+                e.target.classList.toggle('selected');
+                updateCount();
+        };
+}); // select seat
 
 
 
