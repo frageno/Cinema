@@ -1,10 +1,7 @@
 // Getting elemnts from DOM
 
-const dots = document.getElementById('dots');
-const myBtn = document.getElementById('myBtn');
-const more = document.getElementById('more');
+
 const navButton = document.getElementById('nav-button');
-const about = document.getElementById('about-us');
 const screenContainer = document.querySelector('.screen-container');
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
@@ -12,6 +9,31 @@ const overlay = document.getElementById('overlay');
 const overlay2 = document.getElementById('overlay2');
 const booking = document.querySelectorAll('.booking');
 const count = document.getElementById('count');
+const img = document.getElementById("img");
+const movie = document.getElementById("movie");
+
+// Changing video images onclick
+changeImage = (e) => {
+
+        if(e.target.value === '11'){
+
+                img.innerHTML = '<img src="img/guard.png">';
+
+        }
+        else if(e.target.value === '12'){
+                img.innerHTML = '<img src="img/AVENGERS.jpg">';
+
+        }
+        else if(e.target.value === '13'){
+                img.innerHTML = '<img src="img/ip-man.jpg">';
+
+        }
+        else {
+                img.innerHTML = '<img src="img/grayhound.jpg" alt="avangers">';
+
+        }
+}
+
 
 
 
@@ -28,26 +50,7 @@ addClassChange = () => {
 
 // Read more or less function
 
-showMore = () => {
 
-
-        if(dots.style.display === 'none'){
-                dots.style.display = 'inline';
-                myBtn.innerText = "Read more";
-                more.style.display = "none";
-                
-
-        }else {
-
-                dots.style.display = 'none';
-                myBtn.innerText = "Read less";
-                more.style.display = "inline";
-                
-                
-        }
-
-
-}
 
 
 // Events for modal FAQ
@@ -60,7 +63,7 @@ openModalButtons.forEach(button => {
 });
 closeModalButtons.forEach(button => {
         button.addEventListener('click', () =>{
-                const modal = button.closest('.modal1');                           
+                const modal = button.closest('.modal1');
                 closeModal(modal);
         })
 });
@@ -69,7 +72,7 @@ overlay.addEventListener('click', () => {
         modals.forEach(modal => {
                 closeModal(modal);
         });
-        
+
 });
 function openModal(modal){
         if(modal === null) return
@@ -90,7 +93,7 @@ openModalButtons.forEach(button => {
 });
 closeModalButtons.forEach(button => {
         button.addEventListener('click', () =>{
-                const modal = button.closest('.modal2');                           
+                const modal = button.closest('.modal2');
                 closeModal(modal);
         })
 });
@@ -99,7 +102,7 @@ overlay2.addEventListener('click', () => {
         modals.forEach(modal => {
                 closeModal(modal);
         });
-        
+
 });
 function openModal(modal){
         if(modal === null) return
@@ -132,13 +135,13 @@ function updateCount () {
 // Events Listeners
 
 navButton.addEventListener('click', addClassChange);  // change class on hamburger menu
-myBtn.addEventListener('click',showMore); // show more content
 screenContainer.addEventListener('click', (e)=> {
         if(e.target.classList.contains('seat')){
                 e.target.classList.toggle('selected');
                 updateCount();
         };
 }); // select seat
+movie.addEventListener('click',changeImage); // change images
 
 
 
