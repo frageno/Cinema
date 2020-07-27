@@ -24,8 +24,8 @@ body {
     width: 23px;
     margin: 5px;
     transition: all .4s;
-    
-    
+
+
 }
 button {
     outline: none!important;
@@ -68,8 +68,8 @@ button {
     right: 0;
   }
 
-    
-    
+
+
 }
 
 
@@ -78,7 +78,7 @@ button {
     height: auto;
     background: $primary;
     display: inline-block;
-    
+
 }
 
 img {
@@ -86,15 +86,15 @@ img {
     max-width: 100%!important;
     height: auto!important;
     padding-top: 50px;
-    
+
 }
 
 
 .carousel-caption{
     bottom:38%!important;
     right:55%!important;
-    
-    
+
+
 }
 
 
@@ -112,15 +112,15 @@ img {
         }
     }
 
-    
+
 }
 .first-item{
     .carousel-caption{
         bottom:40%!important;
         right:15%!important;
     }
-    
-    
+
+
 }
 @media (max-width:967px){
     .first-item{
@@ -130,28 +130,28 @@ img {
         }
     }
 
-    
+
 }
 .third-item{
     .carousel-caption{
         bottom:40%!important;
         right:15%!important;
     }
-    
+
 }
 @media (max-width:967px){
-    
+
     .third-item{
         .carousel-caption{
             bottom:20%!important;
-            right:15%!important; 
+            right:15%!important;
         }
-        
+
     }
-    
+
 }
 
-    
+
 
 
 .btn-trailers {
@@ -164,16 +164,16 @@ img {
     transition: all .6s ease-in-out;
     text-transform: uppercase;
     font-weight: bold;
-    
-    
-    
-    
+
+
+
+
 
 
     &:hover{
         transform: scale(1.2);
-        
-        
+
+
     }
 }
 button{
@@ -181,16 +181,11 @@ button{
 }
 .about-us {
     background: $primary;
-    height: 160vh;  
 
 
-    
 }
-@media (max-width: 576px){
-    .about-us{
-        height: 300vh;
-    }
-}
+
+
 
 
 .icon {
@@ -219,7 +214,7 @@ button{
     background: $primary;
 }
 .movie-container {
-    
+
 
     label {
         display: flex;
@@ -232,24 +227,28 @@ button{
         display: block;
         margin: 0 auto;
     }
-    
+
 }
 .movie {
     margin-top: 15px;
     padding: 10px;
 
-    
+
 }
 select {
     outline:none!important;
-    
+
 }
 .movie-img {
     text-align: center;
+
+    img {
+        height: 300px!important;
+    }
 }
 .screen-container{
     perspective: 2500;
-    
+
 }
 .screen{
     width: 75%;
@@ -259,7 +258,7 @@ select {
     box-shadow: 0 3px 10px rgba(255,255,255,0.7);
     display: block;
     margin: 0 auto;
-}  
+}
 .row{
     display: flex;
     justify-content: center;
@@ -287,8 +286,8 @@ select {
         cursor: pointer;
     }
 
-    
-    
+
+
 }
 .modal1 {
     position:fixed;
@@ -303,7 +302,7 @@ select {
     width: 800px;
     max-width: 80%;
 
-    
+
 }
 .modal1-button{
     cursor: pointer;
@@ -342,7 +341,7 @@ select {
     p {
         color:$secondary;
         font-weight: bold;
-        
+
     }
 }
 #overlay {
@@ -376,8 +375,8 @@ select {
     color:#fff;
     font-size: 8px;
 
-    
-} 
+
+}
 .showcase {
     display: flex;
     justify-content: center;
@@ -398,7 +397,7 @@ select {
         transform: scale(1);
         cursor: default;
         opacity:1;
-        
+
     }
     .show-selected {
         background-color: #6feaf6;
@@ -407,7 +406,7 @@ select {
     .na {
         pointer-events: none;
     }
-    
+
 }
 
 .bookin-btn {
@@ -436,7 +435,7 @@ select {
     width: 800px;
     max-width: 80%;
 
-    
+
 }
 .modal2-button{
     cursor: pointer;
@@ -478,15 +477,23 @@ select {
     p {
         color:$secondary;
         font-weight: bold;
-        
+
     }
     input {
         display: block;
+        outline: none;
+        border:1px solid #777;
         border-radius:5px;
         padding: 5px;
     }
-    
+    small
+    {
+        display: block;
+        opacity: 0;
+    }
+
 }
+
 
 #overlay, #overlay2 {
     position: fixed;
