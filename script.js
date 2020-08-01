@@ -12,6 +12,77 @@ const count = document.getElementById('count');
 const img = document.getElementById("img");
 const movie = document.getElementById("movie");
 
+
+
+showError = (input,message) =>{
+    const formControl = input.parentElement;
+    formControl.className = 'form_control error'
+    const small = formControl.querySelector('small');
+    small.innerText = message;
+}
+showSuccess = (input) =>{
+    const formControl = input.parentElement;
+    formControl.className = 'form_control success';
+
+
+}
+checkRequired = (inputArr) => {
+    inputArr.forEach((input)=>{
+        if(input.value.trim() === ''){
+            showError(input,'This field cannot be empty!');
+        }
+        else{
+            showSuccess(input);
+        }
+    });
+}
+function validateEmail(input) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(re.test(input.value.trim())){
+        showSuccess(input);
+    }else{
+        showError(input,'Email is not valid');
+    }
+}
+
+checkPassword = (input,min,max) =>{
+    if(input.value.length < min){
+        showError(input,'Must be at least 6 characters');
+    }else if(input.value.length>max){
+        showError(input, 'Must be less than 25 characters');
+    }
+    else {
+        showSuccess(input);
+    }
+}
+checkMatch = (input1, input2) =>{
+    if(input1.value !== input2.value){
+        showError(input2, 'Passwords do not match!');
+    }
+}
+
+// event listener
+
+form.addEventListener('click', (e)=>{
+        let form = document.getElementById('form');
+        let username = document.getElementById('username');
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+        let password2 = document.getElementById('password2');
+    e.preventDefault();
+
+
+    checkRequired([username,email,password,password2]);
+    validateEmail(email);
+    checkPassword(password, 6,25);
+    checkMatch(password,password2);
+
+
+
+
+
+});
+
 // Changing video images onclick
 changeImage = (e) => {
 
