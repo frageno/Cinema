@@ -13,6 +13,12 @@ const img = document.getElementById("img");
 const movie = document.getElementById("movie");
 
 
+setTimeout(function(){
+        $('.loader-bg').toggle();
+},1500); // timeout to preloader
+
+
+
 
 showError = (input,message) =>{
     const formControl = input.parentElement;
