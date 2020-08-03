@@ -1,8 +1,55 @@
+.loader-bg{
+    position: fixed;
+    z-index: 99999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+
+
+}
+.loader{
+    border:0 solid transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top:calc(50vh - 75px);
+    left:calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+    content: '';
+    border:1em solid #ff5799;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top:0;
+    left:0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: .5s;
+}
+@keyframes loader {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 // Colors
 $primary: #1b262c;
 $secondary: #0f4c75;
 $blue-light: #3282b8;
+
 *{
     box-sizing: border-box;
 }
@@ -205,6 +252,9 @@ button{
         transform: translateY(-1px);
     }
 
+}
+.learn-more {
+    color:#fff;
 }
 
 /* end of about-us section */
@@ -548,7 +598,6 @@ select {
 
 /* trailers section */
 .trailers {
-    height: 100vh;
     color:#fff;
     text-align: center;
 
@@ -590,6 +639,34 @@ select {
     }
 }
 /* end of trailers section */
+/* footer */
+.footer-nav {
+    list-style-type: none;
+
+    a{
+        color:#007bff!important;
+
+    }
+
+    &__link{
+        &:hover{
+            color:#fff;
+            text-decoration: underline!important;
+        }
+
+    }
+
+    &__btn {
+        padding: 3px;
+        background-color: $blue-light;
+        color:#fff;
+        margin-left: -6px;
+        width: 80px;
+
+    }
+}
+/* end of footer */
+
 
 
 
