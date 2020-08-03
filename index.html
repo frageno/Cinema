@@ -11,7 +11,9 @@
 
 </head>
 <body>
-
+    <div class="loader-bg">
+        <div class="loader"></div>
+    </div>
     <!-- navigation -->
     <nav class="navbar navbar-expand-lg fixed-top nav">
         <a href="index.html"class="navbar-brand pl-2">
@@ -33,13 +35,13 @@
                 <a href="#about-us" class="nav-link text-white">About Cinema</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-white">Booking Seats</a>
+                <a href="#booking-seats" class="nav-link text-white">Booking Seats</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-white">Trailers</a>
+                <a href="#trailers" class="nav-link text-white">Trailers</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link text-white">Contact</a>
+                <a href="#contact" class="nav-link text-white">Contact</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white modal1-button" data-modal-target="#modal1">FAQ</a>
@@ -142,13 +144,36 @@
 
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-6 text-white text-center py-5">
+                    <h2>Month calendar ahead</h2>
+                    <i class="fas fa-calendar-check fa-3x py-3 text-success"></i>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam culpa quaerat sit quam sed soluta laborum qui quod reiciendis consequatur ullam ea adipisci nostrum alias necessitatibus, natus optio dolorem itaque! Commodi, sequi dolores! <span class="collapse" id="learn-more">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore velit illum perspiciatis dolorum recusandae veniam et pariatur maxime voluptatibus!</span>
+                    </p>
+                    <a class="learn-more" data-toggle="collapse" href="#learn-more" role="button" aria-expanded="false" aria-controls="learn-more">
+                        Learn more
+                    </a>
+
+
+                </div>
+                <div class="col-lg-6 text-white text-center">
+                    <h2>Modern sofas</h2>
+                    <i class="fas fa-couch fa-3x py-3 text-success"></i>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam culpa quaerat sit quam sed soluta laborum qui quod reiciendis consequatur ullam ea adipisci nostrum alias necessitatibus, natus optio dolorem itaque! Commodi, sequi dolores!<span class="collapse" id="learn-more2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dolorum id animi in cumque ducimus doloremque totam!</span>
+                    </p>
+                    <a class="learn-more" data-toggle="collapse" href="#learn-more2" role="button" aria-expanded="false" aria-controls="learn-more2">
+                        Learn more
+                    </a>
+
+                </div>
+            </div>
 
         </div>
 
     </section>
 
     <!-- Booking seats-->
-    <section class="booking">
+    <section class="booking" id="booking-seats">
     <div class="container">
         <div class="row">
             <div class="col-12 pb-5">
@@ -344,7 +369,7 @@
         </div>
     </section>
     <!-- Trailers -->
-    <section class="trailers py-5">
+    <section class="trailers py-3" id="trailers">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -577,11 +602,95 @@
             </div>
         </div>
     </section>
+    <!-- footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-2 text-white">
+                    <ul class="footer-nav">
+                        <li class="py-1">
+                            <a href="index.html" class="footer-nav__link">
+                            Home
+                            </a>
+                        </li>
+                        <li class="py-1">
+                            <a href="#about-us" class="footer-nav__link">
+                            Aboute Cinema
+                            </a>
+                        </li>
+                        <li class="py-1">
+                            <a href="#booking-seats" class="footer-nav__link">
+                            Booking seats
+                            </a>
+                        </li>
+                        <li class="py-1">
+                            <a href="#trailers" class="footer-nav__link">
+                            Trailers
+                            </a>
+                        </li>
+                        <li class="py-1">
+                            <a href="#contact" class="footer-nav__link">
+                            Contact
+                            </a>
+                        </li>
+                        <li class="py-1">
+                            <a class="footer-nav__link modal1-button" data-modal-target="#modal1">FAQ</a>
+                            <div class="modal1" id="modal1">
+                            <div class="modal1-header">
+                        <div class="title">Frequently asked questions</div>
+                        <button data-close-button class="close-button">&times;</button>
+                        </div>
+                        <div class="modal1-body">
+                            <h5>1. How much the ticket cost?</h5>
+                            <p>Once ticket cost 7$.</p>
+                            <h5>2. Lorem ipsum, dolor sit. Sit, provident?</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <h5>3. Lorem ipsum dolor sit amet?</h5>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis harum voluptate eos ea.</p>
+                            <h5>4. Lorem ipsum dolor, sit amet consectetur adipisicing?</h5>
+                            <p>Lorem ipsum dolor sit.</p>
+                            <h5>5. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi?</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui, et assumenda laborum magnam debitis deserunt!</p>
 
+                        </div>
+                </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-2 text-white py-4">
+                    <ul class="footer-nav">
+                        <li>Phone Number:</li>
+                        <li class="py-2"><span style="color:green"><i>666-333-444</i></span></li>
+                        <li>Address E-mail:</li>
+                        <li class="py-2"><span style="color:green"><i>Perrsil@gmail.com</i></span></li>
+                        <li>FAX:</li>
+                        <li><span style="color:green"><i>Perrsil-fax@gmail.com</i></span></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-white text-center">
+                    <h2 class="py-2">Newsletter!</h2>
+                    <form id="newsletter">
+                        <label for="email" class="d-block">Enter your address email</label>
+                        <input type="email" id="email-newsletter" placeholder="Email" class="w-50">
+                        <button class="footer-nav__btn my-3">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
+    </footer>
+    <!-- copyright -->
+    <section class="pt-3">
+        <div class="container-fluid">
+            <div class="row text-white">
+                <div class="col-12 text-center">
+                    &copy; All rights reserved made by FRN 2020
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
