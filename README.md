@@ -40,13 +40,16 @@ You can copy this repository's from here, at your computer follow this three ste
 
 * npm start or run with your localserver 
 
+* View site on hosting https://cinema-booking.netlify.app/
+
 ## Sources
 
 * Images are download from internet,
 * www.fontawsome.com, 
 * www.stackoverflow.com (help me find a solutions to do something),
 * www.css-tricks.com (help me created hover effects), 
-* www.imdb.com (info about the movies and trailers)
+* www.imdb.com (info about the movies and trailers),
+* www.netlify.com (hosting)
 * and others project from internet which inspired me for build this website. 
 
 ## Illustrations
